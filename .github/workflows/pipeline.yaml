@@ -11,7 +11,7 @@ on:
       - v*
 
 env:
-  IMAGE_NAME: new-api
+  IMAGE_NAME: new-ui
 
 jobs:
   build:
