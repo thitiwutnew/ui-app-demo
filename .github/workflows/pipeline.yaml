@@ -11,7 +11,7 @@ on:
       - v*
 
 env:
-  IMAGE_NAME: new-api
+  IMAGE_NAME: new-ui
 
 jobs:
   build:
@@ -108,7 +108,7 @@ jobs:
           for file in $(find ./app/values -type f -name '*.yaml'); do
             ENV=$(yq e '.ENV' $file)
             if [ "$ENV" = "${{ needs.build.outputs.env }}" ]; then
-              yq e -i '.API.ImageTag = strenv(IMAGE)' $file
+              yq e -i '.UI.ImageTag = strenv(IMAGE)' $file
             fi
           done
       
